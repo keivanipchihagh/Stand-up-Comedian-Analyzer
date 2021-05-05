@@ -62,6 +62,8 @@ def fill_data(text):
     text = re.sub('\'s', '', text)
     text = re.sub('\'d', 'would', text)
     text = re.sub('\'ll', 'will', text)
+    text = re.sub('…', '', text)
+    text = re.sub('fucking', 'fuck', text)
     
     text = re.sub('\'', '', text)
     

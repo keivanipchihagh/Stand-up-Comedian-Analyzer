@@ -100,10 +100,28 @@ for index, comedian in enumerate(clean_df.index):
 plt.show()
 
 
+Counter(top_all_words).most_common()
 
 
+# Most common profanities used
+profanities = ['fuck', 'shit']
+
+profanities_df = vectorized_df.transpose()[profanities]
+profanities_df
 
 
+for i, comedian in enumerate(profanities_df.index):
+    
+    x = profanities_df['shit'].loc[comedian]
+    y = profanities_df['fuck'].loc[comedian]
+
+    plt.scatter(x, y, c = 'b')
+    plt.text(x + 0.5, y + 0.5, comedian, fontsize = 10)
+
+plt.title('F words / S words ratio')
+plt.xlabel('S words')
+plt.ylabel('F words')
+plt.show()
 
 
 
