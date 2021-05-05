@@ -1,6 +1,6 @@
 import pandas as pd
 
-data = pd.read_csv('saves/cleaned_transcripts_df.csv', index_col = 0)
+data = pd.read_csv('saves/2.cleaned_transcripts_df.csv', index_col = 0)
 data
 
 
@@ -18,7 +18,7 @@ vectorized_df.index = data.index
 vectorized_df
 
 
-vectorized_df.to_csv('saves/vectorized_transcripts_df.csv')
+vectorized_df.to_csv('saves/3.vectorized_transcripts_df.csv')
 
 
 vectorized_df = vectorized_df.transpose()
@@ -46,11 +46,11 @@ for column in vectorized_df.columns:
 from collections import Counter
 
 # Find words that are common between atleast 6 of the comedians
-add_stop_words = [word for word, count in Counter(top_all_words).most_common() if count > 7]
+add_stop_words = [word for word, count in Counter(top_all_words).most_common() if count > 6]
 add_stop_words
 
 
-clean_df = pd.read_csv('saves/cleaned_transcripts_df.csv', index_col = 0)
+clean_df = pd.read_csv('saves/2.cleaned_transcripts_df.csv', index_col = 0)
 clean_df
 
 
@@ -68,7 +68,7 @@ new_vectorized_df = pd.DataFrame(data_cv.toarray(), columns = vectorizer.get_fea
 new_vectorized_df.index = clean_df.index
 
 
-new_vectorized_df.to_csv('saves/stopwords_vectorized_df.csv')
+new_vectorized_df.to_csv('saves/3.stopwords_vectorized_df.csv')
 
 
 # Imports

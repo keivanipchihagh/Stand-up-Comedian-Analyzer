@@ -2,7 +2,7 @@
 import pickle
 
 transcripts = []
-with open('saves/transcripts_data.json', 'rb') as file:
+with open('saves/1.transcripts_data.json', 'rb') as file:
     transcripts = pickle.load(file)
 
 
@@ -71,4 +71,4 @@ filled_data = pd.DataFrame(lemmatized_data['Transcript'].apply(lambda x: fill_da
 filled_data['Transcript'][0]
 
 
-filled_data.to_csv('saves/cleaned_transcripts_df.csv')
+filled_data.to_csv('saves/2.cleaned_transcripts_df.csv')
