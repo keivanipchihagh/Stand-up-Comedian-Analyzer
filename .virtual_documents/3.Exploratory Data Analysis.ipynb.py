@@ -71,6 +71,41 @@ new_vectorized_df.index = clean_df.index
 new_vectorized_df.to_csv('saves/stopwords_vectorized_df.csv')
 
 
+# Imports
+from wordcloud import WordCloud
+
+wc = WordCloud(
+    stopwords = stop_words,
+    background_color = "white",
+    colormap = "Dark2",
+    max_font_size = 150,
+    random_state = 42
+)
+
+
+# Imports
+import matplotlib.pyplot as plt
+
+plt.rcParams['figure.figsize'] = [16, 6]
+
+# Create subplots for each comedian
+for index, comedian in enumerate(clean_df.index):
+    wc.generate(clean_df['Transcript'][index])
+    
+    plt.subplot(3, 4, index + 1)
+    plt.imshow(wc, interpolation = "bilinear")
+    plt.axis("off")
+    plt.title(comedian)
+
+plt.show()
+
+
+
+
+
+
+
+
 
 
 

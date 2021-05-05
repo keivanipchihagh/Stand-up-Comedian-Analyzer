@@ -58,6 +58,12 @@ def fill_data(text):
     text = re.sub(' ’ ', ' is ', text)
     text = re.sub('’re', ' are ', text)
     text = re.sub('n’t', 'not', text)
+    text = re.sub('n\'t', 'not', text)
+    text = re.sub('\'s', '', text)
+    text = re.sub('\'d', 'would', text)
+    text = re.sub('\'ll', 'will', text)
+    
+    text = re.sub('\'', '', text)
     
     return text
     
