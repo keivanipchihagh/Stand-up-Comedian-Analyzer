@@ -65,13 +65,4 @@ filled_data = pd.DataFrame(lemmatized_data['Transcript'].apply(lambda x: fill_da
 filled_data['Transcript'][0]
 
 
-
-
-
-
-
-
-
-
-
-
+filled_data.to_csv('saves/cleaned_transcripts_df.csv')
