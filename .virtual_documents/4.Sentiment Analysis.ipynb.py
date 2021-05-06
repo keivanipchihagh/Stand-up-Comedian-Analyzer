@@ -75,10 +75,4 @@ for i, value in enumerate(splitted_scripts):
 plt.show()
 
 
-
-
-
-
-
-
-
+clean_df.to_csv('saves/4.sentimented_df.csv')
