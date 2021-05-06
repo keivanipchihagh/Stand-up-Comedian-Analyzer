@@ -122,9 +122,3 @@ plt.title('F words / S words ratio')
 plt.xlabel('S words')
 plt.ylabel('F words')
 plt.show()
-
-
-
-
-
-
