@@ -18,7 +18,10 @@ vectorized_df.index = data.index
 vectorized_df
 
 
+import pickle 
+
 vectorized_df.to_csv('saves/3.vectorized_transcripts_df.csv')
+pickle.dump(vectorizer, open("saves/3.vectorizer.pkl", "wb"))
 
 
 vectorized_df = vectorized_df.transpose()
@@ -69,6 +72,7 @@ new_vectorized_df.index = clean_df.index
 
 
 new_vectorized_df.to_csv('saves/3.stopwords_vectorized_df.csv')
+pickle.dump(vectorizer, open("saves/3.vectorizer.pkl", "wb"))
 
 
 # Imports
